@@ -1,0 +1,43 @@
+.main-page {
+  background-color: #f5f1ef;
+  padding: 30px;
+
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .sub-title {
+    font-size: 16px;
+    color: #999;
+  }
+
+  .title-wrap {
+    text-align: center;
+  }
+
+  .card-wrap {
+    position: relative;
+    display: flex;
+    width: 1000px;
+    margin: 20px auto 0;
+  }
+
+  .img-move-btn {
+    position: absolute;
+    top: 150px;
+    width: 50px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .next-btn {
+    right: -15px;
+  }
+
+  .prev-btn {
+    left: -15px;
+  }
+}
