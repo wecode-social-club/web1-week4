@@ -6,6 +6,18 @@ import "./Main.scss";
 function Main() {
   const [startAt, setStartAt] = useState(0);
 
+  const goPrev = () => {
+    if (startAt - 1 >= 0) {
+      setStartAt(startAt - 1);
+    }
+  };
+
+  const goNext = () => {
+    if (startAt + 1 < 4) {
+      setStartAt(startAt + 1);
+    }
+  };
+
   return (
     <div className="main-page">
       <div className="title-wrap">
@@ -14,12 +26,7 @@ function Main() {
       </div>
 
       <div className="card-wrap">
-        <div
-          onClick={() => {
-            setStartAt(startAt - 1);
-          }}
-          className="prev-btn img-move-btn"
-        >
+        <div onClick={goPrev} className="prev-btn img-move-btn">
           <img src="https://res.kurly.com/pc/service/main/1908/btn_prev_default_x2.png" />
         </div>
 
@@ -29,12 +36,7 @@ function Main() {
           );
         })}
 
-        <div
-          onClick={() => {
-            setStartAt(startAt + 1);
-          }}
-          className="next-btn img-move-btn"
-        >
+        <div onClick={goNext} className="next-btn img-move-btn">
           <img src="https://res.kurly.com/pc/service/main/1908/btn_next_default_x2.png" />
         </div>
       </div>
