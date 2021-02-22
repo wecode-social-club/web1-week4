@@ -1,11 +1,8 @@
-import { useState } from "react";
 import data from "./data/product";
 import Card from "../../Components/Card/Card";
 import "./Main.scss";
 
 function Main() {
-  const [startAt, setStartAt] = useState(0);
-
   return (
     <div className="main-page">
       <div className="title-wrap">
@@ -14,29 +11,11 @@ function Main() {
       </div>
 
       <div className="card-wrap">
-        <div
-          onClick={() => {
-            setStartAt(startAt - 1);
-          }}
-          className="prev-btn img-move-btn"
-        >
-          <img src="https://res.kurly.com/pc/service/main/1908/btn_prev_default_x2.png" />
-        </div>
-
-        {data.slice(startAt, startAt + 4).map((product) => {
+        {data.map((product) => {
           return (
             <Card img={product.img} name={product.name} price={product.price} />
           );
         })}
-
-        <div
-          onClick={() => {
-            setStartAt(startAt + 1);
-          }}
-          className="next-btn img-move-btn"
-        >
-          <img src="https://res.kurly.com/pc/service/main/1908/btn_next_default_x2.png" />
-        </div>
       </div>
     </div>
   );
